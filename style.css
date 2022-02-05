@@ -1,0 +1,382 @@
+/* Aucune bordure */
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+}
+
+/* Importation de la police */
+@font-face {
+    font-family: 'Kumbh Sans';
+    src : url('KumbhSans.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Kumbh Sans Bold';
+    src : url('KumbhSansBold.ttf') format('truetype');
+}
+
+/* Application de la police */
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+/* Barre de navigation */
+ul {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+/* Boutons de navigation à droite */
+li {
+    float: left;
+    height: 100px;
+    line-height: 100px;
+    vertical-align: middle;
+}
+
+/* Boutons de navigation */
+li a {
+    display: block;
+    color: hsl(219, 9%, 45%);
+    text-align: center;
+    padding-left: 15px;
+    text-decoration: none;
+    font-size: 20px;
+    padding-right : 5%;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+/* Elements à droite de la barre de navigations */
+.topnav-right {
+    float: right;
+    padding-right: 10%;
+}
+
+/* Photo de profil */
+.profile-nav{
+    height: 50px;
+    margin-top: 13px;
+    margin-left: -70px;
+}
+
+.profile-nav:hover{
+    border: solid 2px hsl(26, 100%, 55%);
+    border-radius: 50%;
+}
+
+/* Panier */
+.cart-nav {
+    height: 30px;
+    margin-left: -150px;
+}
+
+/* Liens de navigation */
+.lien{
+    margin-left: 200px;
+}
+
+li a:hover{
+    color: hsl(220, 13%, 13%);
+    text-decoration: underline;
+    text-underline-offset: 25px;
+    text-decoration-color: hsl(26, 100%, 55%);
+    text-decoration-thickness: 5px;
+}
+
+.nav{
+    margin-left:10%;
+}
+
+/* Ligne de separation */
+.transition{
+    height: 0.5px;
+    width: 80%;
+    transform:translateX(-50%);
+    margin-left: 50%;
+    background-color: hsl(219, 9%, 45%);
+    margin-top: -14px;
+}
+
+/* Bouton ajouter au panier */
+.add-item {
+    display: flex;
+    border: 0px solid;
+    background-color: hsl(26, 100%, 55%);
+    color: white;
+    padding: 14px 28px;
+    font-size: 20px;
+    font-family: 'Kumbh Sans';
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px hsl(26, 100%, 55%);
+    transition: box-shadow 0.25s, color 0.25s, background-color 0.25s, color 0.25s;
+    margin-top: -59px;
+    margin-left: 200px;
+    justify-content: center;
+    align-items:center;
+    height: 53px;
+    width: 350px;
+}
+
+.add-item:hover {
+    background-color:hsl(26, 100%, 70%);
+    box-shadow: 1px 1px 18px hsl(26, 100%, 55%);
+    transition: box-shadow 0.25s, color 0.25s, background-color 0.25s, color 0.25s;
+}
+
+.add-item img{
+    height: 25px;
+    width: auto;
+    color: white;
+    margin-left : -10px;
+}
+
+.add-item p{
+    font-size : 17px;
+    margin-left: 45px;
+    font-weight: 700;
+}
+
+/* Container pour la fiche produit */
+.item-container {
+    display: flex;
+    width:100%;
+    grid-template-columns: repeat(auto-fill, auto);
+}
+
+/* Marque du fabricant (texte en orange) */
+.item-brand {
+    color: hsl(26, 100%, 55%);
+    font-size: 80%;
+}
+
+/* Image du produit */
+.produit{
+    margin-top: 5%;
+    margin-left: 10%;
+    width: 50vh;
+    grid-template-columns: repeat(auto-fill, auto);
+}
+
+.current{
+    height: 60%;
+    border-radius: 5%;
+    width: 70vh;
+    height: auto;
+}
+
+.item-price-sale {
+    color: #ff7d1a;
+    background-color: #ffede0;
+    width: 32px;
+}
+
+/* Informations tel que le nom, le fabricant, le prix... */
+.item-info {
+    margin-top: 15%;
+    margin-left: 20%;;
+    width: 70vh;
+}
+
+.item-name{
+    font-size: 40px;
+    font-family: 'Kumbh Sans Bold';
+}
+
+.item-description{
+    color:hsl(219, 9%, 45%);
+    font-size: 18px;
+}
+
+.item-price{
+    font-weight: 700 !important;
+    font-size: 30px;
+}
+
+.item-price-sale{
+    display: flex;
+    margin-top: -28px;
+    margin-left: 120px;
+    font-weight: 700;
+}
+
+.item-actual-price{
+    color:hsl(220, 14%, 75%);
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+
+.counter-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background-color: #f7f8fd;
+    padding: 1.2rem 2.4rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    width: 20%;
+    font-family: 'Kumbh Sans Bold';
+}
+
+.cart {
+    position: absolute;
+    right: 10rem;
+    top: 4.5rem;
+    width: 22rem;
+    height: 16rem;
+    z-index: 1;
+    background-color: white;
+    border-radius: 1rem;
+    -webkit-box-shadow: 0 1rem 1rem 1rem rgba(0, 0, 0, 0.1), 0 1rem 2rem 1rem rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1rem 1rem 1rem rgba(0, 0, 0, 0.1), 0 1rem 2rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.btnCart:hover {
+    cursor: pointer;
+}
+
+.cart .msg-empty {
+    color: #68707d;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 7.8rem 0;
+    margin-top : -2.5rem;
+}
+  
+.cart .checkout {
+    background-color: #ff7d1a;
+    color: white;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 1.4rem;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    display: absolute;
+}
+
+.cart-header{
+    font-size : 18px;
+    font-weight: 700;
+    margin: 15px;
+}
+
+.transicart {
+    position: absolute;
+    height: 1px;
+    width : 100%;
+    background-color: #68707d;
+}
+  
+.cart .products-in-cart .item {
+    margin: 2.4rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+  
+.cart .products-in-cart .item .product-img {
+    width: 5rem;
+    border-radius: 0.5rem;
+    margin-left: -35px;
+    margin-top: -20px;
+}
+  
+.cart .products-in-cart .item .details {
+    color: #68707d;
+    font-size: 20px;
+    line-height: 2.6rem;
+    margin-top: -25px;
+}
+  
+.cart .products-in-cart .item .details .price-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 0.6rem;
+}
+
+  .cart .products-in-cart .item .details .price-group .total-amount {
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: rgba(0, 0, 0, 0.75);
+}
+  
+.cart .products-in-cart .item #btnDelete {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+  
+.cart .products-in-cart .item #btnDelete:hover {
+    cursor: pointer;
+    background-color: #ffede0;
+}
+
+.cart .hidden {
+    display: none;
+}
+  
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 376px) {
+    .nav{
+        background-color: white;
+    }
+
+    .produit{
+        width:100%;
+        height: 100%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .produit img{
+        width:100%;
+    }
+
+    .item-info{
+        width:100%;
+    }
+}
+
+.cart-count {
+    position: absolute;
+    top: 1rem;
+    right: 17em;
+    background-color: #ff7d1a;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 100%;
+    padding: 0.1rem 0.6rem;
+    border-radius: 1rem;
+}
+
+.carrousel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 48px;
+}
+
+.carrousel img {
+    border-radius: 10px;
+    width: 128px;
+}
